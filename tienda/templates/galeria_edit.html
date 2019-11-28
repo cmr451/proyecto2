@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<nav>
+  	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-home-tab" data-toggle="tab" href="/index2" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-profile-tab" data-toggle="tab" href="/galeria_edit" role="tab" aria-controls="nav-profile" aria-selected="false">Editar Galeria</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/registro_pro" role="tab" aria-controls="nav-contact" aria-selected="false">Registro Productos</a>
+      <a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/cliente_edit" role="tab" aria-controls="nav-contact" aria-selected="false">Editar Clientes</a>
+    	
+  	</div>
+</nav>
+<br>	
+{% endblock %}
+
+{% block content %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Tamaño</td>
+			<td>Precio</td>
+			<td>Imagen</td>
+			<td>Acciones</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if productos %}
+		{% for producto in productos %}
+		<tr>
+			<td>{{ producto.id_producto}}</td>
+			<td>{{ producto.nombre }}</td>
+			<td>{{ producto.tamaño }}</td>
+			<td>{{ producto.precio }}</td>
+			<td><img src="{{ producto.imagen.url }}" width="100px" height="100px"></td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'editar_pro' producto.id_producto %}">Editar</a>
+				<a class="btn btn-primary" href="{% url 'eliminar_pro' producto.id_producto %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay registro de productos</h1>
+		{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}

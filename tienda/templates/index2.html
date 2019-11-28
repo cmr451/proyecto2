@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nav %}
+<nav>
+  	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-home-tab" data-toggle="tab" href="/index2" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-profile-tab" data-toggle="tab" href="/galeria_edit" role="tab" aria-controls="nav-profile" aria-selected="false">Editar Galeria</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/registro_pro" role="tab" aria-controls="nav-contact" aria-selected="false">Registro Productos</a>
+      <a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/cliente_edit" role="tab" aria-controls="nav-contact" aria-selected="false">Editar Clientes</a>
+    	
+  	</div>
+</nav>
+<br>	
+{% endblock %}
+
+{% block content %}
+
+<p class="list-group-item list-group-item-danger">REGALOS PARA TODA OCACION</p>
+<br>
+<div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-4">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'img/foto22.jpg' %}" width="300px" height="300px">
+                <div class="card-body">
+                  <h5 class="card-title">PERSONALIZADOS</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4"> 
+              <div class="card">
+                <img class="card-img-top" src="{% static 'img/foto23.jpg' %}" width="300px" height="300px">
+                <div class="card-body">
+                  <h5 class="card-title">CUMPLEAÑOS</h5>    
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col mb-4">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'img/foto24.jpg' %}" width="300px" height="300px">
+                <div class="card-body">
+                  <h5 class="card-title">SAN VALENTIN</h5> 
+                </div>
+              </div>
+            </div>
+
+            <div class="col mb-4"> 
+              <div class="card">
+                <img  class="card-img-top" src="{% static 'img/foto33.jpg' %}" width="300px" height="300px">
+                <div class="card-body">
+                  <h5 class="card-title">FECHAS ESPECIALES</h5>
+                </div>
+              </div>
+            </div>
+</div>
+
+{% endblock %}

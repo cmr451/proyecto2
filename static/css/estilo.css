@@ -1,0 +1,41 @@
+*{
+	background:#fff;
+	padding: 0px;
+	margin: 0px;
+}
+body{
+    width: 80%;
+	background: #fff;
+	max-width: 1000px;
+	margin: auto;
+}
+.todo{
+	width: 100%;
+	background: #fff;
+	max-width: 1000px;
+	margin: auto;
+	box-sizing: border-box;
+}
+.portada{
+	box-shadow: 3px 3px 3px 3px #B86BBD;
+	width: 100%;
+	height: auto;
+}
+.footer{
+	background: #fff;
+	width: 100%;
+	display: flex;
+	min-height: 10vh;
+
+}
+
+.foo{
+
+	margin: auto;
+	width: 100%;
+	font-size: 13px;
+	text-align: center;
+}
+
+
+

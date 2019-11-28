@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="card-deck">
+		<div class="card border-info mb-3">
+			<center><img src="{% static 'img/logo.jpg' %}" width="400px" height="400px"></img></center>
+		</div>
+		<div class="card border-info mb-3">
+		<center>
+		<br><h1>WHATSAPP</h1><br><h2>976 585 000</h2><br><br><a href="https://www.facebook.com/LoveGestos/"><h2>FACEBOOK</h2></a>
+		</center>	
+		</div>
+</div>
+
+
+<form action="" method="post">
+
+{% csrf_token %}
+<div class="form-group" >
+<div class="form-group row">
+	<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><h4>Nombre</h2></label>
+	<input class="form-control" type="text" name="">
+</div>
+<div class="form-group row">
+	<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><h4>Apellidos</h2></label>
+	<input class="form-control" type="text" name="">
+</div>
+<div class="form-group row">
+	<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><h4>Email</h2></label>
+	<input class="form-control" type="email" name="">
+</div>
+<div class="form-group row">
+	<label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm"><h4>Mensaje</h2></label>
+	<textarea class="form-control" type="text" name="" ></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary">Enviar</button>
+</div>
+
+</form>
+
+{% endblock %}

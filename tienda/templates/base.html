@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap-4.3.1-dist/css/bootstrap.min.css' %}">
+  <link rel="icon" type="imagen/jpg" href="{% static 'img/logo.jpg' %}">
+	<link rel="stylesheet"  type="text/css" href="{% static 'css/estilo.css' %}">
+	<script type="text/javascript" src="{% static 'bootstrap-4.3.1-dist//js/bootstrap.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+</head>
+
+<body>
+<div class="todo">
+<header>
+	<img class="portada" src="{% static 'img/portada.jpg' %}">
+</header>
+<br>
+{% block nav %}
+<nav>
+  	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-home-tab" data-toggle="tab" href="/index" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-profile-tab" data-toggle="tab" href="/galeria" role="tab" aria-controls="nav-profile" aria-selected="false">Galeria</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/contacto" role="tab" aria-controls="nav-contact" aria-selected="false">Contacto</a>
+      <a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/registro_cli" role="tab" aria-controls="nav-contact" aria-selected="false">Registro</a>
+    	
+  	</div>
+</nav>
+<br>	
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+
+
+	<div class="footer">
+    	<p class="foo">Ternimos y condiciones Proteccion de datos Aviso legal <br>
+    	Huanuco-2019 </p>
+	</div>
+</div>
+</body>
+</html>

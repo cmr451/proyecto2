@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+<nav>
+  	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-home-tab" data-toggle="tab" href="/index2" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-profile-tab" data-toggle="tab" href="/galeria_edit" role="tab" aria-controls="nav-profile" aria-selected="false">Editar Galeria</a>
+    	<a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/registro_pro" role="tab" aria-controls="nav-contact" aria-selected="false">Registro Productos</a>
+      <a class="btn btn-outline-danger btn-lg btn-block" id="nav-contact-tab" data-toggle="tab" href="/cliente_edit" role="tab" aria-controls="nav-contact" aria-selected="false">Editar Clientes</a>
+    	
+  	</div>
+</nav>
+<br>	
+{% endblock %}
+
+{% block content %}
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Apellidos</td>
+			<td>Edad</td>
+			<td>Email</td>
+			<td>Acciones</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if clientes %}
+		{% for cliente in clientes %}
+		<tr>
+			<td>{{ cliente.id_cliente}}</td>
+			<td>{{ cliente.nombre }}</td>
+			<td>{{ cliente.apellidos }}</td>
+			<td>{{ cliente.edad }}</td>
+			<td>{{ cliente.email }}</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'editar_cli' cliente.id_cliente %}">Editar</a>
+				<a class="btn btn-primary" href="{% url 'eliminar_cli' cliente.id_cliente %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay registro de clientes</h1>
+		{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}
